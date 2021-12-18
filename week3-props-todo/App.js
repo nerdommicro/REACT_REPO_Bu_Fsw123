@@ -6,37 +6,28 @@ import React from 'react';
 
 
 function App() {
-  const [toDoList, changeToDo] = useState(STORE)
+  const [todos, setTodos] = useState(STORE)
 
-  const completeToDo = (setText, setID) => {
-    
+  const completeToDo = (item, id) => {    
+
     const toDoListCopy = [...toDoList];
+    
+    const toDo = toDoListCopy.findIndex(e => e.id === id);
 
-    const toDo = toDoListCopy.findIndex(e => e.id === setID);
-
-    if (setText.isCompleted === false) {
-
-      setText.isCompleted = true;
-    }
-    else {
-
-      setText.isCompleted = false;
-    }
-
-    toDoListCopy.splice(toDo, 1, setText)
-
-    changeToDo(toDoListCopy);
+    if (item.isCompleted === false) {
+            item.isCompleted = true;    }
+    else {      setitemText.isCompleted = false;    }
+    // toDoListCopy.splice(todox, 1, setText)
+    setTodos(toDoListCopy);
   }
 
-  const deleteToDo = (setID) => {
+  const deleteToDo = (id) => {
 
     const toDoListCopy = [...toDoList];
+    const todox = toDoListCopy.findIndex(e => e.id === id);
+    toDoListCopy.splice(todox, 1)
 
-    const toDo = toDoListCopy.findIndex(index => index.id === setID);
-
-    toDoListCopy.splice(toDo, 1)
-
-    changeToDo(toDoListCopy);
+    setTodos(toDoListCopy);
   }
 
 
