@@ -24,7 +24,7 @@ function App() {
   }
 
   return (              
-        <Todolist className="App"
+        <Todolist 
           items = {todos}
           completetodo = {completetodo}         
           deletetodo = {deletetodo}      
