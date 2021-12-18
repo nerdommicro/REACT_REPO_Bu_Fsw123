@@ -4,9 +4,12 @@ import Todolist from './Todolist';
 function Todo(key, completed, task, deleted) {
 return ( 
 <li key={key} style={{textDecoration:{completed} ? "line-through" : "" }}>
-    {task}>    
-    <input type="checkbox" checked={completed}
-      onChange={() => completeTodo(key)}></input>      
+    <input type="checkbox" 
+    checked={completed} 
+    onChange={() => 
+    completeTodo(key)}>     
+    </>
+    {task}       
 </li> 
 );
 }
