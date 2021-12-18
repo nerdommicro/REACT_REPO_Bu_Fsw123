@@ -1,6 +1,6 @@
 import {v4 as uuidv4} from 'uuid';
 
-const TodosArray = [
+export const TodosArray = [
     {
         id: uuidv4(), 
         text: "Walk dog", 
@@ -33,4 +33,3 @@ const TodosArray = [
     }
 ];
 
-export default TodosArray

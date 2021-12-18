@@ -1,7 +1,8 @@
-import React from 'react';
-import {useState} from 'react';
-import TodosArray from './STORE';
+import './App.css';
+import {TodosArray} from './STORE';
 import Todolist from './Todolist';
+import {useState} from 'react';
+
 
 function App() {
   // Create a state variable called todos to store the array of todos.
@@ -9,27 +10,25 @@ function App() {
   // the imported array from STORE.js  
   const [todos, setTodos] = useState(TodosArray);
 
-  const completeTodo = id=> {
+  const completetodo = (id)=> {
     const temp = [...todos];
-    const index = temp.findIndex(i=>i.id === id);
-    temp[index].completeTodo = !temp[index].completeTodo;
+    const index = temp.find(i=>i.id === id);
+    temp[index].isCompleted = !temp[index].isCompleted;
     setTodos(temp);
   };
 
-  const deleteTodo = id => {
+  const deletetodo = (id) => {
     const temp = [...todos];
     const newTodos = temp.filter((todo) => todo.id !== id);
     setTodos(newTodos);
   }
 
-  return (
-    <div>            
-        <Todolist 
-          items = {TodosArray}
-          completed = {completeTodo}         
-          deleted = {deleteTodo}      
-        />
-    </div>
+  return (              
+        <Todolist className="App"
+          items = {todos}
+          completetodo = {completetodo}         
+          deletetodo = {deletetodo}      
+        />    
   );
 }
 

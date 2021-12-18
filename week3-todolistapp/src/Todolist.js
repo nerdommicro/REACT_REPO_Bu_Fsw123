@@ -1,17 +1,18 @@
+
 import React from 'react';
 import Todo from './Todo';
 
 
-function Todolist({items, completed, deleted }) {   
+function Todolist({items, completetodo, deletetodo }) {   
 
     const listTodos =  items.map((todo) => {
         //pass each todo  to Todo function which renders the one li
         return (
-                    <Todo       
-                        key={todo.key} 
-                        completed={todo.isCompleted}
-                        task={todo.text}                  
-                        deleted={deleted}
+                    <Todo 
+                        key={todo.id} 
+                        completetodo={todo.isCompleted}
+                        text={todo.text}                  
+                        deletetodo={deletetodo}
                     />
                 )
         }

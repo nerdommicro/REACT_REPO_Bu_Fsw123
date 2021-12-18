@@ -1,17 +1,11 @@
-import React from 'react';
-import Todolist from './Todolist';
 
-function Todo(key, completed, task, deleted) {
-return ( 
-<li key={key} style={{textDecoration:{completed} ? "line-through" : "" }}>
-    <input type="checkbox" 
-    checked={completed} 
-    onChange={() => 
-    completeTodo(key)}
-    />   
-    {!deleted && task}       
-</li> 
+function Todo(key, completetodo, text, deletetodo) {
+return (
+    <li key={key}>
+    <input type="checkbox" checked={completetodo} onChange={() => completetodo(key)} /> 
+    <span style={{textDecoration:{completetodo} ? "line-through":''}}>{text}</span>
+    <button onClick = {() => deletetodo(key)}>x</button>
+    </li>
 );
 }
-
 export default Todo;
