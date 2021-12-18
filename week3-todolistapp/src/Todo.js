@@ -7,9 +7,9 @@ return (
     <input type="checkbox" 
     checked={completed} 
     onChange={() => 
-    completeTodo(key)}>     
-    </>
-    {task}       
+    completeTodo(key)}
+    />   
+    {!deleted && task}       
 </li> 
 );
 }
