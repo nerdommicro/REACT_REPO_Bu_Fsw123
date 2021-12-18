@@ -20,20 +20,20 @@ function RollDice() {
     <>
       <div className="container">
         <div className="diceContainer">
-        <i className={`dice1 in ${diceNumberList ? diceNumberList[dice1] : ""}`
-        }>          
-        </i>        
+          <i className={`dice1 in ${diceNumberList ? diceNumberList[dice1] : ""}`
+          }>
+          </i>
         </div>
         <div className="diceContainer">
-        <i className={`dice2 in ${diceNumberList ? diceNumberList[dice2] : ""}`
-        }>          
-        </i>        
+          <i className={`dice2 in ${diceNumberList ? diceNumberList[dice2] : ""}`
+          }>
+          </i>
         </div>
-      </div>      
+      </div>
       <button onClick={() => {
-            setDice1(Math.floor(Math.random() * 6) + 1);
-            setDice2(Math.floor(Math.random() * 6) + 1);
-            }
+        setDice1(Math.floor(Math.random() * 6) + 1);
+        setDice2(Math.floor(Math.random() * 6) + 1);
+      }
       }>Roll Dice</button>
     </>
   );
