@@ -9,14 +9,14 @@ function App() {
   // the imported array from STORE.js  
   const [todos, setTodos] = useState(TodosArray);
 
-  const completeTodo = (id )=> {
+  const completeTodo = id=> {
     const temp = [...todos];
     const index = temp.findIndex(i=>i.id === id);
     temp[index].completeTodo = !temp[index].completeTodo;
     setTodos(temp);
   };
 
-  const deleteTodo = (id) => {
+  const deleteTodo = id => {
     const temp = [...todos];
     const newTodos = temp.filter((todo) => todo.id !== id);
     setTodos(newTodos);
