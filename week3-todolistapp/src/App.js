@@ -20,9 +20,9 @@ function App() {
 
   const deletetodo = (id) => {
     const temp = [...todos];
-    const filtered = temp.filter((item) => item.id !== id);
-    //const x = temp.splice(index, 1)
-    setTodos(filtered);
+    const index = temp.findIndex(item=>item.id === id);   
+    temp[index].pop(); 
+    setTodos(temp);
   }
 
   return <Todolist items = {todos} completetodo = {completetodo} deletetodo = {deletetodo} />    
