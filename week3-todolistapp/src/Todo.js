@@ -1,10 +1,10 @@
 
-function Todo(key, completetodo, text, deletetodo) {
+function Todo(item, completetodo, deletetodo) {
 return (
-    <li key={key}>
-    <input type="checkbox" checked={completetodo} onChange={() => completetodo(key)} /> 
-    <span style={{textDecoration:{completetodo} ? "line-through":''}}>{text}</span>
-    <button onClick = {() => deletetodo(key)}>x</button>
+    <li key={item.id}>
+        <input type="checkbox" checked={item.isCompleted} onChange={() => completetodo(item.id)} /> 
+        <span style={{textDecoration:item.isCompleted ? "line-through":''}}>{item.text}</span>
+        <button onClick = {() => deletetodo(item.id)}>x</button>
     </li>
 );
 }

@@ -1,7 +1,8 @@
 import './App.css';
+import {useState} from 'react';
 import {TodosArray} from './STORE';
 import Todolist from './Todolist';
-import {useState} from 'react';
+
 
 
 function App() {
@@ -12,24 +13,20 @@ function App() {
 
   const completetodo = (id)=> {
     const temp = [...todos];
-    const index = temp.find(i=>i.id === id);
+    const index = temp.findIndex(item=>item.id === id);
     temp[index].isCompleted = !temp[index].isCompleted;
     setTodos(temp);
   };
 
   const deletetodo = (id) => {
     const temp = [...todos];
-    const newTodos = temp.filter((todo) => todo.id !== id);
-    setTodos(newTodos);
+    const filtered = temp.filter((item) => item.id !== id);
+    //const x = temp.splice(index, 1)
+    setTodos(filtered);
   }
 
-  return (              
-        <Todolist 
-          items = {todos}
-          completetodo = {completetodo}         
-          deletetodo = {deletetodo}      
-        />    
-  );
+  return <Todolist items = {todos} completetodo = {completetodo} deletetodo = {deletetodo} />    
+  
 }
 
 export default App;
