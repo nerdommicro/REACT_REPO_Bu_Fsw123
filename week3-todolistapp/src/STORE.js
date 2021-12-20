@@ -1,35 +1,34 @@
 import {v4 as uuidv4} from 'uuid';
 
-export const TodosArray = [
+export const tododata = [
     {
-        id: uuidv4(), 
-        text: "Walk dog", 
+        id: uuidv4(),
+        text: "Wake up",
         isCompleted: true
     },
     {
-        id: uuidv4(), 
-        text: "Do React homework", 
+        id: uuidv4(),
+        text: "Let dogs out",
         isCompleted: false
     },
     {
-        id: uuidv4(), 
-        text: "Go to work", 
+        id: uuidv4(),
+        text: "Feed dogs",
         isCompleted: true
     },
     {
-        id: uuidv4(), 
-        text: "Ship out my orders", 
+        id: uuidv4(),
+        text: "Ship out my orders",
         isCompleted: false
     },
     {
-        id: uuidv4(), 
-        text: "Apply for jobs", 
+        id: uuidv4(),
+        text: "Apply for jobs",
         isCompleted: false
     },
     {
-        id: uuidv4(), 
-        text: "Play on hack the box", 
+        id: uuidv4(),
+        text: "Play on hack the box",
         isCompleted: false
     }
 ];
-

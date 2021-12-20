@@ -1,32 +1,32 @@
-import './App.css';
-import {useState} from 'react';
-import {TodosArray} from './STORE';
-import Todolist from './Todolist';
-
-
+import TodoList from "./Todolist";
+import { useState } from "react";
+import { tododata } from "./STORE";
 
 function App() {
-  // Create a state variable called todos to store the array of todos.
-  // The default value for this todos state variable will be 
-  // the imported array from STORE.js  
-  const [todos, setTodos] = useState(TodosArray);
+    const [todos, setTodos] = useState(tododata);
+    const completeTodo = (id) => {
+        const temp = [...todos];
+        const index = temp.findIndex((item) => item.id === id);
+        temp[index].isComplete = !temp[index].isComplete;
+        setTodos(temp);
+    };
 
-  const completetodo = (id)=> {
-    const temp = [...todos];
-    const index = temp.findIndex(item=>item.id === id);
-    temp[index].isCompleted = !temp[index].isCompleted;
-    setTodos(temp);
-  };
+    const deleteTodo = (id) => {
+        const tempTodos = [...todos];
+        const index = tempTodos.findIndex((item) => item.id === id);
+        const filteredTodos = tempTodos.splice(index, 1); //not sure here
+        setTodos(tempTodos);
+    };
 
-  const deletetodo = (id) => {
-    const temp = [...todos];
-    const index = temp.findIndex(item=>item.id === id);   
-    temp[index].pop(); 
-    setTodos(temp);
-  }
-
-  return <Todolist items = {todos} completetodo = {completetodo} deletetodo = {deletetodo} />    
-  
+    return (
+        <>
+            <TodoList
+                items={todos}
+                completeTodo={completeTodo}
+                deleteTodo={deleteTodo}
+            />
+        </>
+    );
 }
 
 export default App;

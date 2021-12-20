@@ -1,12 +1,17 @@
+import Todo from './Todo'
 
-import Todo from './Todo';
+function TodoList ({items, completeTodo, deleteTodo}) {
 
-function Todolist({items, completetodo, deletetodo }) {   
+    const list = items.map((todo) => {
+        return <Todo key={todo.id} item={todo} completeTodo={completeTodo} deleteTodo={deleteTodo} />
 
-    const listTodos =  items.map((todo) => {        
-        return <Todo key={todo.id} item={todo} completetodo={completetodo} deletetodo={deletetodo} />                
     })
 
-    return <ul>{listTodos}</ul> 
+    return (
+        <ul>
+            {list}
+        </ul>
+    )
 }
-export default Todolist;
+
+export default TodoList
