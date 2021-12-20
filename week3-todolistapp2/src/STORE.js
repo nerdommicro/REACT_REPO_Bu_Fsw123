@@ -1,34 +1,34 @@
 import {v4 as uuidv4} from 'uuid';
 
-export const todoList = [
+export const tododata = [
     {
         id: uuidv4(),
         text: "Wake up",
-        isComplete: true
+        isCompleted: true
     },
     {
         id: uuidv4(),
         text: "Let dogs out",
-        isComplete: false
+        isCompleted: false
     },
     {
         id: uuidv4(),
         text: "Feed dogs",
-        isComplete: true
+        isCompleted: true
     },
     {
         id: uuidv4(),
         text: "Ship out my orders",
-        isComplete: false
+        isCompleted: false
     },
     {
         id: uuidv4(),
         text: "Apply for jobs",
-        isComplete: false
+        isCompleted: false
     },
     {
         id: uuidv4(),
         text: "Play on hack the box",
-        isComplete: false
+        isCompleted: false
     }
 ];

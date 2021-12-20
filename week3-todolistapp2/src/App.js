@@ -1,20 +1,20 @@
 import TodoList from "./Todolist";
 import { useState } from "react";
-import { todoList } from "./STORE";
+import { tododata } from "./STORE";
 
 function App() {
-    const [todos, setTodos] = useState(todoList);
+    const [todos, setTodos] = useState(tododata);
     const completeTodo = (id) => {
-        const tempTodos = [...todos];
-        const index = tempTodos.findIndex((item) => item.id === id);
-        tempTodos[index].isComplete = !tempTodos[index].isComplete;
-        setTodos(tempTodos);
+        const temp = [...todos];
+        const index = temp.findIndex((item) => item.id === id);
+        temp[index].isComplete = !temp[index].isComplete;
+        setTodos(temp);
     };
 
     const deleteTodo = (id) => {
         const tempTodos = [...todos];
         const index = tempTodos.findIndex((item) => item.id === id);
-        const filteredTodos = tempTodos.splice(index, 1);
+        const filteredTodos = tempTodos.splice(index, 1); //not sure here
         setTodos(tempTodos);
     };
 
