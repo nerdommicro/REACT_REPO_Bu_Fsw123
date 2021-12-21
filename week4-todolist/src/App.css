@@ -1,0 +1,10 @@
+* {
+  color: black;
+  padding: 5px;
+}
+.App {
+  color:purple;
+}
+li {
+  list-style-type:none;
+}

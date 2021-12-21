@@ -1,9 +1,11 @@
 import TodoList from "./Todolist";
 import { useState } from "react";
 import { tododata } from "./STORE";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
     const [todos, setTodos] = useState(tododata);
+
     const completeTodo = (id) => {
         const temp = [...todos];
         const index = temp.findIndex((item) => item.id === id);
@@ -14,16 +16,30 @@ function App() {
     const deleteTodo = (id) => {
         const tempTodos = [...todos];
         const index = tempTodos.findIndex((item) => item.id === id);
-        const filteredTodos = tempTodos.splice(index, 1); //not sure here
+        tempTodos.splice(index, 1);
         setTodos(tempTodos);
     };
 
+    const addTodo = (todotext) => {
+        const newTodos = [...todos];
+        const todo1 =  
+            {
+                id: uuidv4(),
+                text: `${todotext}`,
+                isCompleted: false,
+            };
+        newTodos.push(todo1);
+        
+        setTodos(newTodos);
+    };
+
     return (
-        <>
+        <>            
             <TodoList
                 items={todos}
                 completeTodo={completeTodo}
                 deleteTodo={deleteTodo}
+                addTodo={addTodo}
             />
         </>
     );
