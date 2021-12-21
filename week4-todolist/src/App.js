@@ -2,6 +2,7 @@ import TodoList from "./Todolist";
 import { useState } from "react";
 import { tododata } from "./STORE";
 import { v4 as uuidv4 } from "uuid";
+import TodoForm from "./TodoForm";
 
 function App() {
     const [todos, setTodos] = useState(tododata);
@@ -14,32 +15,30 @@ function App() {
     };
 
     const deleteTodo = (id) => {
-        const tempTodos = [...todos];
-        const index = tempTodos.findIndex((item) => item.id === id);
-        tempTodos.splice(index, 1);
-        setTodos(tempTodos);
+        const temp = [...todos];
+        const index = temp.findIndex((item) => item.id === id);
+        temp.splice(index, 1);
+        setTodos(temp);
     };
 
     const addTodo = (todotext) => {
-        const newTodos = [...todos];
-        const todo1 =  
-            {
-                id: uuidv4(),
-                text: `${todotext}`,
-                isCompleted: false,
-            };
-        newTodos.push(todo1);
-        
-        setTodos(newTodos);
+        const temp = [...todos];
+        const todo1 = {
+            id: uuidv4(),
+            text: `${todotext}`,
+            isCompleted: false,
+        };
+        temp.push(todo1);
+        setTodos(temp);
     };
 
     return (
-        <>            
+        <>
+            <TodoForm addTodo={addTodo} />
             <TodoList
                 items={todos}
                 completeTodo={completeTodo}
                 deleteTodo={deleteTodo}
-                addTodo={addTodo}
             />
         </>
     );
