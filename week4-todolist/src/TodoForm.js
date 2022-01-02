@@ -3,12 +3,19 @@ import { useState } from "react";
 function TodoForm(addTodo) {
     const [input, setInput] = useState("");
 
-    const handleSaveInput = (e) => {
-        e.preventDefault();
-        setInput(document.getElementById("input").value);
+    const handleSaveInput = () => {
+        var inputbox = document.querySelector("#inputbox");
+        setInput(inputbox.value);
     };
-    const submitTodo = () => {
-        addTodo(input);
+    const submitTodo = (e) => {
+        e.preventDefault();
+        var inputbox = document.querySelector("#inputbox");
+        if (inputbox.value === "") {
+            console.log("todo is empty");
+            return;
+        } else {
+            addTodo(inputbox.value);
+        }
     };
     return (
         <>
@@ -17,7 +24,7 @@ function TodoForm(addTodo) {
                 <h2>Add new todos via the input field:</h2>
                 <input
                     type="text"
-                    id="input"
+                    id="inputbox"
                     onChange={() => handleSaveInput()}
                 />
                 <button type="submit">Add To Do</button>

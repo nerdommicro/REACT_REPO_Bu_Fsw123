@@ -1,3 +1,4 @@
+import './App.css';
 import TodoList from "./Todolist";
 import { useState } from "react";
 import { tododata } from "./STORE";

@@ -1,0 +1,49 @@
+body {
+    margin: 1em;
+    font-size: larger;
+    background-color: white;
+}
+
+ul {
+    list-style-type: none;
+}
+.quarter-page {
+    width: 300px;
+}
+.btn-right {
+    float: right;
+}
+.btn-small {
+    font-size: small;
+}
+
+.error {
+    color: white;
+    padding: 1px 5px;
+    background-color: lightseagreen
+}
+
+.form-area {
+    margin: 3em;
+    background-color:white;
+    border: 1px solid blue;
+    padding: 1.1em;
+    border-radius: 5px;
+}
+h3 {
+    color:Navy;
+    border-bottom: 2.4px solid purple;
+    width: 99%;
+    padding: 4px;
+}
+#main-menu li,
+.menu-label {
+    display: inline-block;
+    margin: 0.3em;
+    padding-right: 0.3em;
+    border-right: 1px solid black;
+}
+.menu-label {
+    font-weight: bold;
+    font-size: medium;
+}
