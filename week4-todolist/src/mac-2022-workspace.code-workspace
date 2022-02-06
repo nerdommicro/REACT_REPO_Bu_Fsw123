@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../../htdocs"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
